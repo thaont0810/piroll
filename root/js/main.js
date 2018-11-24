@@ -19,3 +19,11 @@ function playPause() {
      } 
    }
 }
+
+$(document).ready(function(){
+  $('.flexslider').flexslider({
+    animation: "slide",
+    animationLoop: true,
+    directionNav: false, 
+  })
+});

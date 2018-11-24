@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
 
+  <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
   <!--build:css css/styles.min.css-->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -123,7 +124,7 @@
               </div>
             </div>
             <div class="bars__item">
-              <p class="bars__title">Marketing <span>65%</span class="bars__span"></p>
+              <p class="bars__title">Marketing <span class="bars__span">65%</span></p>
               <div class="bars__container">
                 <div class="bars__content bars__mar"></div>
               </div>
@@ -334,9 +335,73 @@
     </section>
 
     <section class="testimonials">
-      
+      <div class="flexslider">
+        <ul class="list slides">
+          <li class="item">
+            <q class="item__quote">1 Outstanding job and exceeded all expectations. It was a pleasure
+              to work with them on a sizable first project and am looking
+              forward to start the next one asap.</q>
+            <p class="item__author">Michael Hopkins</p>
+          </li>
+          <li class="item">
+            <q class="item__quote">2 Outstanding job and exceeded all expectations. It was a pleasure
+              to work with them on a sizable first project and am looking
+              forward to start the next one asap.</q>
+            <p class="item__author">Michael Hopkins</p>
+          </li>
+          <li class="item">
+            <q class="item__quote">3 Outstanding job and exceeded all expectations. It was a pleasure
+              to work with them on a sizable first project and am looking
+              forward to start the next one asap.</q>
+            <p class="item__author">Michael Hopkins</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="clients">
+      <ul class="container list">
+        <li class="item">
+          <img class="item__img" src="images/clients/client1.png" alt="">
+        </li>
+        <li class="item">
+          <img class="item__img" src="images/clients/client2.png" alt="">
+        </li>
+        <li class="item">
+          <img class="item__img" src="images/clients/client3.png" alt="">
+        </li>
+        <li class="item">
+          <img class="item__img" src="images/clients/client4.png" alt="">
+        </li>
+        <li class="item">
+          <img class="item__img" src="images/clients/client1.png" alt="">
+        </li>
+      </ul>
+    </section>
+
+    <section class="mess">
+      <div class="mess-container">
+        <div class="mess__header">
+          <h3 class="mess__title">Need a project?</h3>
+          <p class="mess__desc">Let us know what you're looking for in an agency. We'll take a look and see
+            if this could be the start of something beautiful.</p>
+        </div>
+        <form action="" class="form">
+          <div class="form__info">
+            <input class="form__input" type="text" placeholder="Your Name">
+            <input class="form__input" type="email" placeholder="Your Email">
+          </div>
+          <input class="form__input" type="text" placeholder="Your Title">
+          <textarea class="form__text" name="" id="" placeholder="Your Comment"></textarea>
+          <button class="form__btn" type="button">Send message</button>
+        </form>
+      </div>
     </section>
   </main>
+
+  <!-- flexslider -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script defer src="js/jquery.flexslider.js"></script>
 
   <!--build:js js/main.min.js -->
   <script src="js/main.js"></script>
