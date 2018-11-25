@@ -25,5 +25,6 @@ $(document).ready(function(){
     animation: "slide",
     animationLoop: true,
     directionNav: false, 
+    slideshowSpeed: 3000,
   })
 });

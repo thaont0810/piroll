@@ -302,7 +302,9 @@ a {
       font-size: 12px;
       font-weight: 600;
       color: #191919;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      padding-top: 15px;
+      letter-spacing: 1px; }
     .services .item__desc {
       font-family: "Nunito Sans";
       font-size: 16px; }
@@ -353,42 +355,44 @@ a {
     justify-content: space-between;
     align-items: center; }
 
-.mess {
+.mail {
   background: #f5f5f5;
   padding: 95px 0; }
-  .mess .mess-container {
+  .mail .mail-container {
     width: 670px;
     margin: auto;
     text-align: center; }
-  .mess__header {
+  .mail__header {
     width: 540px;
     margin: auto; }
-  .mess__title {
+  .mail__title {
     font-size: 30px;
     font-family: Montserrat;
     color: #1d1d1d;
     font-weight: 600; }
-  .mess__desc {
+  .mail__desc {
     padding: 30px 0; }
-  .mess .form__info {
+  .mail .form__info {
     display: flex;
     justify-content: space-between; }
-    .mess .form__info .form__input {
+    .mail .form__info .form__input {
       width: 320px; }
-  .mess .form input {
+  .mail .form input {
     height: 48px; }
-  .mess .form input, .mess .form textarea {
+  .mail .form input,
+  .mail .form textarea {
     border: none;
     margin-bottom: 30px;
     padding: 15px 20px;
     width: 100%;
     outline: none;
     resize: none; }
-    .mess .form input::placeholder, .mess .form textarea::placeholder {
+    .mail .form input::placeholder,
+    .mail .form textarea::placeholder {
       font-size: 15px; }
-  .mess .form__text {
+  .mail .form__text {
     height: 170px; }
-  .mess .form__btn {
+  .mail .form__btn {
     font-size: 12px;
     font-family: Montserrat;
     font-weight: bold;
@@ -400,3 +404,37 @@ a {
     outline: none;
     cursor: pointer;
     letter-spacing: 1px; }
+
+footer {
+  background: #141414;
+  padding: 90px 0; }
+
+.ft {
+  font-size: 15px;
+  color: #bcbcbc;
+  display: flex; }
+  .ft .copy {
+    flex-basis: 230px;
+    margin-right: 250px; }
+    .ft .copy em {
+      font-family: Montserrat;
+      font-size: 18px;
+      font-weight: 700;
+      font-style: normal;
+      color: #FFF;
+      display: block; }
+    .ft .copy__info {
+      padding-top: 25px; }
+  .ft .contact {
+    flex-basis: 155px; }
+  .ft a {
+    color: #bcbcbc; }
+    .ft a:hover {
+      color: #10c9c3; }
+  .ft .list {
+    flex-basis: 170px;
+    margin: 0 130px;
+    display: grid;
+    grid-template-columns: 50% 50%; }
+  .ft .social {
+    flex-basis: 80px; }
