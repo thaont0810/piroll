@@ -1,6 +1,8 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var babel = require('gulp-babel');
 var browserSync = require('browser-sync').create();
+
 // var useref = require('gulp-useref');
 // var uglify = require('gulp-uglify');
 // var gulpIf = require('gulp-if');
@@ -9,6 +11,7 @@ var browserSync = require('browser-sync').create();
 // var cache = require('gulp-cache');
 // var del = require('del');
 // var runSequence = require('run-sequence');
+
 
 gulp.task('hello', function() {
   console.log('Hello Zell');
@@ -24,11 +27,20 @@ gulp.task('sass', function(){
     }));
 });
 
+gulp.task("js", function () {
+  return gulp.src("root/babel/**/*.js")
+    .pipe(babel())
+    .pipe(gulp.dest("root/js"))
+    .pipe(browserSync.reload({
+      stream: true
+    }));
+});
+
 // watch
-gulp.task('watch', ['browserSync', 'sass'], function(){
+gulp.task('watch', ['browserSync', 'sass', 'js'], function(){
   gulp.watch('root/scss/**/*.scss', ['sass']); 
   gulp.watch('root/*.html', browserSync.reload);
-  gulp.watch('root/js/**/*.js', browserSync.reload); 
+  gulp.watch('root/babel/**/*.js', ['js']);
 });
 
 gulp.task('browserSync', function() {
@@ -38,6 +50,8 @@ gulp.task('browserSync', function() {
     },
   })
 });
+
+
 
 // optimizing css and js
 // gulp.task('useref', function(){

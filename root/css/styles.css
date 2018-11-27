@@ -4,7 +4,7 @@
   box-sizing: border-box; }
 
 body {
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Nunito Sans';
   font-size: 16px;
   line-height: 24px;
   color: #787878; }
@@ -19,6 +19,48 @@ a {
 .container {
   width: 1170px;
   margin: auto; }
+  @media screen and (max-width: 768px) {
+    .container {
+      width: 100%; } }
+
+.loading {
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 1;
+  background: #ffffff;
+  transition: all 1s linear; }
+  .loading.bounceOut {
+    opacity: 0;
+    z-index: -99999;
+    transition: all 1s linear; }
+  .loading .bouncing-loader {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .loading .bouncing-loader div {
+    width: 15px;
+    height: 15px;
+    margin: 0 5px;
+    background: #10c9c3;
+    border-radius: 50%;
+    animation: bouncing-loader 0.6s infinite alternate; }
+  .loading .bouncing-loader div:nth-child(2) {
+    animation-delay: 0.2s; }
+
+@keyframes bouncing-loader {
+  from {
+    opacity: 1;
+    transform: translateY(0); }
+  to {
+    opacity: 0.1;
+    transform: translateY(10px); } }
 
 .illus__img {
   width: 100%;
@@ -47,6 +89,9 @@ a {
 
 .menu {
   display: flex; }
+  @media screen and (max-width: 768px) {
+    .menu {
+      display: none; } }
   .menu__item {
     font-family: "Montserrat";
     text-transform: uppercase;
@@ -61,7 +106,7 @@ a {
     .menu__item:hover .dropdown {
       display: block; }
   .menu__link {
-    padding: 1px 15px;
+    padding: 1px 17px;
     color: #000;
     display: block; }
     .menu__link:hover {
@@ -91,6 +136,9 @@ a {
   width: 505px;
   position: absolute;
   right: 0; }
+  @media screen and (max-width: 768px) {
+    .desc {
+      width: 100%; } }
   .desc__title {
     font-family: "Montserrat";
     font-size: 38px;
@@ -101,7 +149,7 @@ a {
     font-size: 18px;
     line-height: 28px;
     color: #787878;
-    padding: 30px 0; }
+    padding: 20px 0 0; }
   .desc__link {
     font-family: "Montserrat";
     font-size: 12px;
@@ -110,23 +158,29 @@ a {
     background: #10c9c3;
     padding: 15px 51px;
     display: inline-block;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    margin: 32px 0 0; }
 
 .section__title {
   color: #191919;
   font-size: 30px;
+  font-family: "Montserrat";
   text-transform: capitalize; }
 
 .about {
   width: 625px;
   background: #fff;
-  padding: 95px 0;
+  padding: 94px 0;
   text-align: center; }
+  @media screen and (max-width: 768px) {
+    .about {
+      width: 100%; } }
   .about__desc {
     padding: 32px 0; }
 
 .skills {
-  position: relative; }
+  position: relative;
+  font-family: "Montserrat"; }
   .skills__illus__img {
     width: 100%;
     height: 570px;
@@ -137,6 +191,9 @@ a {
     position: absolute;
     top: 50%;
     transform: translate(0, -50%); }
+    @media screen and (max-width: 768px) {
+      .skills__content {
+        width: 100%; } }
   .skills .bars__container {
     width: 100%;
     background: #d8d8d8; }
@@ -163,18 +220,26 @@ a {
 
 .achievements {
   background: #10c9c3;
-  padding: 90px 0; }
+  padding: 95px 0; }
   .achievements .list {
     display: flex;
     justify-content: space-between; }
   .achievements .item {
     display: flex;
-    align-items: center; }
+    align-items: center;
+    flex-basis: 25%;
+    margin: 0 15px; }
+    .achievements .item:first-child {
+      margin-left: 0; }
+    .achievements .item:last-child {
+      margin-right: 0; }
+    .achievements .item__img {
+      display: block; }
     .achievements .item__content {
       color: #fff;
       font-family: "Montserrat";
       font-weight: 600;
-      padding-left: 20px;
+      padding-left: 25px;
       letter-spacing: 1px; }
     .achievements .item__span {
       font-size: 18px; }
@@ -190,6 +255,8 @@ a {
   width: 25%;
   position: relative; }
   .work .item:hover .item__hover {
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     display: block; }
   .work .item__img {
     height: 300px;
@@ -199,13 +266,11 @@ a {
   .work .item__hover {
     position: absolute;
     top: 0;
-    display: flex;
     right: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.85);
-    display: none;
-    transition: 0.3s ease-in-out; }
+    display: none; }
     .work .item__hover__img {
       position: absolute;
       top: 50%;
@@ -215,25 +280,30 @@ a {
 .work__more {
   color: #8e8e8e;
   font-size: 12px;
+  font-family: "Montserrat";
   padding: 38px 0;
   background: #f5f5f5;
   display: block;
   text-align: center;
   text-transform: uppercase;
   font-weight: 600;
-  transition: 0.3s ease-in-out; }
+  transition: 0.3s ease-in-out;
+  letter-spacing: 1px; }
   .work__more:hover {
     background: #10c9c3;
     color: #000; }
 
 .process {
-  padding: 90px 0; }
+  padding: 100px 0 95px; }
   .process__header {
     text-align: center;
     width: 500px;
     margin: auto; }
+    @media screen and (max-width: 768px) {
+      .process__header {
+        width: 100%; } }
   .process__desc {
-    padding: 35px 0 55px 0; }
+    padding: 34px 0 52px 0; }
   .process__video {
     position: relative;
     width: 100%; }
@@ -286,55 +356,65 @@ a {
         border-right: 5px solid #fff;
         border-left: 5px solid #fff; }
     .process__video #video {
-      width: 100%; }
+      width: 100%;
+      height: 571px; }
 
 .services {
   background: #f5f5f5; }
   .services .list {
     display: flex;
     flex-wrap: wrap;
-    padding: 70px 0; }
+    padding: 77px 0 70px; }
   .services .item {
     width: 25%;
-    padding: 25px 20px;
+    padding: 27px 20px;
     text-align: center; }
+    .services .item__container-img {
+      width: 44px;
+      height: 46px;
+      margin: auto; }
+    .services .item__img {
+      display: block;
+      margin: auto; }
     .services .item__title {
       font-size: 12px;
+      font-family: Montserrat;
       font-weight: 600;
       color: #191919;
       text-transform: uppercase;
       padding-top: 15px;
-      letter-spacing: 1px; }
-    .services .item__desc {
-      font-family: "Nunito Sans";
-      font-size: 16px; }
+      letter-spacing: 1px;
+      line-height: 30px; }
 
 .testimonials {
-  background: #10c9c3; }
-  .testimonials .flexslider {
+  background: #10c9c3;
+  font-family: "Montserrat"; }
+  .testimonials .slick-test {
     width: 820px;
     margin: auto;
-    padding: 170px 0 55px; }
-    .testimonials .flexslider .flex-control-paging {
+    padding: 170px 0 65px; }
+    .testimonials .slick-test button.slick-next,
+    .testimonials .slick-test button.slick-prev {
+      display: none !important; }
+    .testimonials .slick-test .slick-dots {
       display: flex;
       align-items: center;
-      justify-content: center; }
-      .testimonials .flexslider .flex-control-paging li {
-        margin: 0 6px; }
-        .testimonials .flexslider .flex-control-paging li a {
-          width: 6px;
-          height: 6px;
-          border-radius: 20px;
-          background: #b0e8e6;
-          display: block;
-          text-indent: -9999px; }
-          .testimonials .flexslider .flex-control-paging li a.flex-active {
-            width: 10px;
-            height: 10px;
-            background: #fff; }
+      justify-content: center;
+      bottom: 60px; }
+      .testimonials .slick-test .slick-dots li {
+        margin: 0 5px;
+        width: 6px;
+        height: 6px;
+        border-radius: 20px;
+        background: #b0e8e6;
+        display: block;
+        text-indent: -9999px; }
+        .testimonials .slick-test .slick-dots li.slick-active {
+          width: 10px;
+          height: 10px;
+          background: #fff; }
   .testimonials .item {
     color: #fff;
-    font-family: Montserrat;
     text-align: center;
     padding-bottom: 105px;
     line-height: 36px; }
@@ -342,22 +422,31 @@ a {
       font-size: 24px;
       font-weight: 600;
       padding-bottom: 25px;
-      display: block; }
+      display: block;
+      line-height: 38px; }
     .testimonials .item__author {
       text-transform: uppercase;
-      font-size: 12px; }
+      font-size: 12px;
+      line-height: 20px; }
 
 .clients {
-  padding: 60px 0;
+  padding: 65px 0;
   background: #fff; }
   .clients .list {
     display: flex;
     justify-content: space-between;
     align-items: center; }
+    @media screen and (max-width: 768px) {
+      .clients .list {
+        display: block; } }
+    .clients .list .item {
+      padding: 0 35px; }
+      .clients .list .item__img {
+        display: block; }
 
 .mail {
   background: #f5f5f5;
-  padding: 95px 0; }
+  padding: 100px 0; }
   .mail .mail-container {
     width: 670px;
     margin: auto;
@@ -365,20 +454,13 @@ a {
   .mail__header {
     width: 540px;
     margin: auto; }
-  .mail__title {
-    font-size: 30px;
-    font-family: Montserrat;
-    color: #1d1d1d;
-    font-weight: 600; }
   .mail__desc {
-    padding: 30px 0; }
+    padding: 34px 0; }
   .mail .form__info {
     display: flex;
     justify-content: space-between; }
     .mail .form__info .form__input {
       width: 320px; }
-  .mail .form input {
-    height: 48px; }
   .mail .form input,
   .mail .form textarea {
     border: none;
@@ -390,6 +472,8 @@ a {
     .mail .form input::placeholder,
     .mail .form textarea::placeholder {
       font-size: 15px; }
+  .mail .form textarea {
+    margin-bottom: 0; }
   .mail .form__text {
     height: 170px; }
   .mail .form__btn {
@@ -403,11 +487,12 @@ a {
     border: none;
     outline: none;
     cursor: pointer;
-    letter-spacing: 1px; }
+    letter-spacing: 1px;
+    margin-top: 25px; }
 
 footer {
   background: #141414;
-  padding: 90px 0; }
+  padding: 94px 0; }
 
 .ft {
   font-size: 15px;
@@ -415,7 +500,7 @@ footer {
   display: flex; }
   .ft .copy {
     flex-basis: 230px;
-    margin-right: 250px; }
+    margin-right: 240px; }
     .ft .copy em {
       font-family: Montserrat;
       font-size: 18px;
@@ -426,15 +511,16 @@ footer {
     .ft .copy__info {
       padding-top: 25px; }
   .ft .contact {
-    flex-basis: 155px; }
+    flex-basis: 200px; }
   .ft a {
     color: #bcbcbc; }
     .ft a:hover {
       color: #10c9c3; }
   .ft .list {
-    flex-basis: 170px;
-    margin: 0 130px;
-    display: grid;
-    grid-template-columns: 50% 50%; }
+    flex-basis: 200px;
+    margin: 0 100px;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2; }
   .ft .social {
     flex-basis: 80px; }
